@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from '@/lib/AuthContext';
-import VLibras from '@/components/VLibras';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Rotary Club de Marabá',
@@ -36,8 +36,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
             }}
           />
-          <VLibras />
         </AuthProvider>
+
+        {/* VLibras - Acessibilidade em Libras */}
+        <div {...{ vw: 'true' }} style={{ display: 'block' }}>
+          <div {...{ 'vw-access-button': 'true' }} className="active"></div>
+          <div {...{ 'vw-plugin-wrapper': 'true' }}>
+            <div className="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <Script
+          src="https://vlibras.gov.br/app/vlibras-plugin.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            try {
+              new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
+            } catch(e) {}
+          }}
+        />
       </body>
     </html>
   );
