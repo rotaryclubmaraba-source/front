@@ -20,7 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <link rel="icon" href="/rotary-logo.png" />
-        <link rel="stylesheet" href="https://vlibras.gov.br/app/vlibras-plugin.css" />
       </head>
       <body>
         <AuthProvider>
