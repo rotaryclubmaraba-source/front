@@ -4,39 +4,27 @@ import { useEffect } from 'react';
 
 export default function VLibras() {
   useEffect(() => {
-    // Remove instância anterior se existir
-    const existing = document.querySelector('script[src*="vlibras"]');
-    if (existing) existing.remove();
+    // Se o widget já foi inicializado, não faz nada
+    if ((window as any).__vlibrasLoaded) return;
+    (window as any).__vlibrasLoaded = true;
 
     const script = document.createElement('script');
     script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
     script.async = true;
-
     script.onload = () => {
-      setTimeout(() => {
-        if ((window as any).VLibras) {
-          new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
-        }
-      }, 500);
+      if ((window as any).VLibras) {
+        new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
+      }
     };
-
     document.head.appendChild(script);
-
-    return () => {
-      const s = document.querySelector('script[src*="vlibras"]');
-      if (s) s.remove();
-    };
   }, []);
 
   return (
     <div
       {...{ vw: 'true' }}
-      style={{ display: 'block' }}
+      style={{ display: 'block', position: 'fixed', bottom: 0, right: 0, zIndex: 9999 }}
     >
-      <div
-        {...{ 'vw-access-button': 'true' }}
-        className="active"
-      />
+      <div {...{ 'vw-access-button': 'true' }} className="active" />
       <div {...{ 'vw-plugin-wrapper': 'true' }}>
         <div className="vw-plugin-top-wrapper" />
       </div>
