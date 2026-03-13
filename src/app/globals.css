@@ -157,32 +157,3 @@ img {
 [vw].enabled {
   z-index: 9999 !important;
 }
-
-/* VLibras Acessibilidade */
-[vw-access-button] {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: fixed !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  z-index: 99999 !important;
-  width: 50px !important;
-  height: 50px !important;
-  background-color: #003F87 !important;
-  border-radius: 50% !important;
-  cursor: pointer !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-[vw-plugin-wrapper] {
-  position: fixed !important;
-  bottom: 80px !important;
-  right: 20px !important;
-  z-index: 99998 !important;
-}
-
-[vw] {
-  display: block !important;
-}

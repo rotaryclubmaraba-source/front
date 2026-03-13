@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <link rel="icon" href="/rotary-logo.png" />
+        <link rel="stylesheet" href="https://vlibras.gov.br/app/vlibras-plugin.css" />
       </head>
       <body>
         <AuthProvider>
@@ -38,14 +39,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </AuthProvider>
 
-        {/* VLibras - Acessibilidade em Libras */}
-        <div {...{ vw: 'true' }} style={{ display: 'block' }}>
+        {/* VLibras */}
+        <div {...{ vw: 'true' }}>
           <div {...{ 'vw-access-button': 'true' }} className="active"></div>
           <div {...{ 'vw-plugin-wrapper': 'true' }}>
             <div className="vw-plugin-top-wrapper"></div>
           </div>
         </div>
+
         <Script
+          id="vlibras"
           src="https://vlibras.gov.br/app/vlibras-plugin.js"
           strategy="afterInteractive"
           onLoad={() => {
