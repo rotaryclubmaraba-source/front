@@ -34,7 +34,7 @@ export default function ContatoPage() {
                   </div>
                   <div>
                     <strong style={{ display: 'block', color: '#002d61', marginBottom: 4 }}>Endereço</strong>
-                    <p style={{ color: '#6C757D', lineHeight: 1.7 }}>Folha 29, Quadra Especial, Nova Marabá<br />Marabá – PA, CEP: 68.514-500</p>
+                    <p style={{ color: '#6C757D', lineHeight: 1.7 }}> Av. Minas Gerais S/N - Belo Horizonte<br />Marabá – PA, CEP: 68.514-500</p>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>

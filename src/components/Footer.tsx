@@ -134,7 +134,7 @@ export default function Footer() {
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <FaMapMarkerAlt style={{ color: '#F7A81B', marginTop: 3, flexShrink: 0 }} />
                 <span style={{ fontSize: '0.88rem', opacity: 0.8, lineHeight: 1.6 }}>
-                  Folha 29, Quadra Especial, Nova Marabá<br />
+                  Av. Minas Gerais S/N - Belo Horizonte<br />
                   Marabá – PA, CEP: 68.514-500
                 </span>
               </div>
