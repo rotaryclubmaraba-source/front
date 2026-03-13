@@ -6,7 +6,7 @@ export default function VLibras() {
   useEffect(() => {
     // Load VLibras script
     const script = document.createElement('script');
-    script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     script.onload = () => {
       if ((window as any).VLibras) {
         new (window as any).VLibras.Widget('https://vlibras.gov.br/app');
