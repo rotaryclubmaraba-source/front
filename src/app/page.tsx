@@ -4,7 +4,6 @@ import PublicLayout from '@/components/PublicLayout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaHandshake, FaGlobe, FaUsers, FaHeart, FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
-import { GiGearStickPattern } from 'react-icons/gi';
 import { useEffect, useState } from 'react';
 
 const valores = [
@@ -52,7 +51,7 @@ export default function HomePage() {
         background: 'linear-gradient(135deg, #001e4d 0%, #002d61 40%, #003F87 70%, #1A5CA8 100%)',
         position: 'relative', overflow: 'hidden',
       }}>
-        {/* Gear decorations */}
+        {/* Decorations */}
         <div style={{
           position: 'absolute', right: '-120px', top: '50%', transform: 'translateY(-50%)',
           opacity: 0.04, animation: 'spin 60s linear infinite',
@@ -60,19 +59,17 @@ export default function HomePage() {
           <div style={{ width: 500, height: 500, borderRadius: '50%', border: '40px solid #F7A81B' }} />
         </div>
         <div style={{
-          position: 'absolute', left: '-80px', bottom: '-80px',
-          opacity: 0.05,
+          position: 'absolute', left: '-80px', bottom: '-80px', opacity: 0.05,
         }}>
           <div style={{ width: 300, height: 300, borderRadius: '50%', border: '30px solid #F7A81B' }} />
         </div>
-        {/* Dots pattern */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: 'radial-gradient(rgba(247,168,27,0.08) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 2, padding: '80px 24px' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2, padding: '80px 24px 140px' }}>
           <div style={{
             display: 'grid', gridTemplateColumns: '1fr auto',
             gap: '64px', alignItems: 'center',
@@ -111,7 +108,7 @@ export default function HomePage() {
               </p>
 
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <Link href="/transparencia" className="btn-primary" style={{
+                <Link href="/transparencia" style={{
                   background: '#F7A81B', color: '#002d61',
                   fontWeight: 700, padding: '14px 32px', borderRadius: 8, fontSize: '1rem',
                   display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -168,10 +165,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Wave */}
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 80L1440 80L1440 40C1440 40 1200 0 720 0C240 0 0 40 0 40L0 80Z" fill="white" />
+        {/* Wave — agora com altura maior para não cobrir os stats */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, lineHeight: 0 }}>
+          <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+            <path d="M0 100L1440 100L1440 60C1440 60 1200 10 720 10C240 10 0 60 0 60L0 100Z" fill="white" />
           </svg>
         </div>
 
@@ -214,8 +211,7 @@ export default function HomePage() {
                 background: 'white', borderRadius: 16, padding: '36px 28px',
                 boxShadow: '0 4px 20px rgba(0,63,135,0.07)',
                 border: '1px solid rgba(0,63,135,0.06)',
-                transition: 'all 0.3s',
-                cursor: 'default',
+                transition: 'all 0.3s', cursor: 'default',
               }}
                 onMouseEnter={e => {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
@@ -306,8 +302,7 @@ export default function HomePage() {
               background: '#002d61', color: 'white',
               fontWeight: 700, padding: '14px 36px', borderRadius: 8, fontSize: '1rem',
               textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 10,
-              boxShadow: '0 8px 24px rgba(0,45,97,0.25)',
-              transition: 'all 0.2s',
+              boxShadow: '0 8px 24px rgba(0,45,97,0.25)', transition: 'all 0.2s',
             }}>
               Entre em Contato <FaArrowRight />
             </Link>
